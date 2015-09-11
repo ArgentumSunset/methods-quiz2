@@ -27,6 +27,21 @@ module MethodsQuiz2
 	def squirrels_play?(temp,isSummer)
 		isSummer ? tempRange(temp,60,100) : tempRange(temp,60,90)
 	end
+
+	def red_ticket(a,b,c)
+		if a == b && b == c
+			if a == 2 && b == 2 && c == 2
+				10
+			else
+				5
+			end
+		elsif b != a && c != a
+			1
+		else
+			0
+		end
+	end
+
 	private
 		def tempRange(temp,min,max)
 			temp >= min ? (temp <= max ? true : false) : false

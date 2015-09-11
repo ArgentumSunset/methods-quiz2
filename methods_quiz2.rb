@@ -16,6 +16,13 @@ module MethodsQuiz2
 			roll1 + roll2
 		end
 	end
+
+	def max_maybe(int1,int2)
+		rem1 = int1 % 5
+		rem2 = int2 % 5
+		ints = [int1, int2]
+		int1 == int2 ? 0 : (rem1 == rem2 ? ints.min : ints.max)
+	end
 	
 	private
 

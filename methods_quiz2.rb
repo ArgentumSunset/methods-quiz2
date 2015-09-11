@@ -23,8 +23,13 @@ module MethodsQuiz2
 		ints = [int1, int2]
 		int1 == int2 ? 0 : (rem1 == rem2 ? ints.min : ints.max)
 	end
-	
-	private
 
+	def squirrels_play?(temp,isSummer)
+		isSummer ? tempRange(temp,60,100) : tempRange(temp,60,90)
+	end
+	private
+		def tempRange(temp,min,max)
+			temp >= min ? (temp <= max ? true : false) : false
+		end
 
 end

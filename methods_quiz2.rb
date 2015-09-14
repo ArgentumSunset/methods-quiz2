@@ -1,20 +1,7 @@
 module MethodsQuiz2
+	
 	def without_doubles(roll1,roll2,no_doubles)
-		if no_doubles
-			if roll1 == roll2
-				if roll1 == 6
-					roll1 = 1
-					roll1 + roll2
-				else
-					roll1 = roll1 + 1
-					roll1 + roll2
-				end
-			else
-				roll1 + roll2
-			end
-		else
-			roll1 + roll2
-		end
+		no_doubles ? (roll1 == roll2 ? increment(roll1) + roll2 : roll1 + roll2) : roll1 + roll2
 	end
 
 	def max_maybe(int1,int2)
@@ -29,20 +16,15 @@ module MethodsQuiz2
 	end
 
 	def red_ticket(a,b,c)
-		if a == b && b == c
-			if a == 2 && b == 2 && c == 2
-				10
-			else
-				5
-			end
-		elsif b != a && c != a
-			1
-		else
-			0
-		end
+		a == b && b == c ? (a == 2 ? 10 : 5) : (b != a && c != a ? 1 : 0)
 	end
 
 	private
+
+		def increment(int)
+			int == 6 ? 1 : int + 1
+		end
+
 		def tempRange(temp,min,max)
 			temp >= min ? (temp <= max ? true : false) : false
 		end
